@@ -1,16 +1,15 @@
-function updateSensors() {
-    const temperature = (20 + Math.random() * 40).toFixed(1);
-    const voltage = (11.5 + Math.random() * 1.5).toFixed(2);
-    const current = (1 + Math.random() * 4).toFixed(2);
+async function updateSensors() {
+    const response = await fetch("http://127.0.0.1:8000/sensors");
+    const data = await response.json();
 
     document.getElementById("temperature").textContent =
-        `${temperature} °C`;
+        `${data.temperature.toFixed(1)} °C`;
 
     document.getElementById("voltage").textContent =
-        `${voltage} V`;
+        `${data.voltage.toFixed(2)} V`;
 
     document.getElementById("current").textContent =
-        `${current} A`;
+        `${data.current.toFixed(2)} A`;
 }
 
 updateSensors();
