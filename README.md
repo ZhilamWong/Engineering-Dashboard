@@ -57,7 +57,7 @@ python backend/mac_battery.py
 ```
 
 ### Terminal 4: CPU temperature collector 
-lets 
+
 ```bash
 cd ~/Documents/engineering-dashboard
 source .venv/bin/activate
