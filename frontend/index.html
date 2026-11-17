@@ -16,8 +16,8 @@
         </div>
 
         <div class="status">
-            <span class="status-dot"></span>
-            System Online
+            <span class="status-dot checking" id="api-status-dot"></span>
+            <span id="api-status-text">Checking API…</span>
         </div>
     </header>
 
@@ -32,22 +32,32 @@
             </div>
 
             <div class="sensor-card">
-                <h2>Voltage</h2>
-                <p id="voltage">-- V</p>
-                <span class="sensor-label">Current reading</span>
-            </div>
-
-            <div class="sensor-card">
-                <h2>Current</h2>
-                <p id="current">-- A</p>
-                <span class="sensor-label">Current reading</span>
+                <h2>Battery</h2>
+                <p id="battery-charge">--%</p>
+                <span id="battery-status" class="sensor-label">Waiting for reading</span>
             </div>
 
         </section>
 
+        <section class="chart-card">
+            <h2>CPU temperature history</h2>
+            <div class="chart-container">
+                <canvas id="temperature-chart"></canvas>
+            </div>
+        </section>
+
+        <section class="chart-card">
+            <h2>Battery level over the last four hours</h2>
+            <div class="chart-container">
+                <canvas id="battery-chart"></canvas>
+            </div>
+            <p id="battery-trend">Collecting readings…</p>
+        </section>
+
     </main>
 
-    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js?v=9"></script>
 
 </body>
 </html>
